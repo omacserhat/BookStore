@@ -1,1 +1,1 @@
-# BookStore
+# BookStore Patika Eğitimi Projesi
