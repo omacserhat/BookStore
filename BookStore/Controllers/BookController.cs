@@ -56,5 +56,35 @@ namespace BookStore.Controllers
             return bookList;
         }
         */
+
+        //post
+        [HttpPost]
+        public IActionResult AddBook([FromBody] Book newBook)
+        {
+            var book = BookList.SingleOrDefault(x => x.Title == newBook.Title);
+            if (book is not null)
+                return BadRequest();
+
+            BookList.Add(newBook);
+            return Ok();
+            
+        }
+
+        //put
+
+        [HttpPut("{id}")]
+        public IActionResult UpdateBook(int id, [FromBody] Book updateBook)
+        {
+            var book = BookList.SingleOrDefault(x => x.Id == id);
+            if (book is null)
+                return BadRequest();
+
+            book.GenreId = updateBook.GenreId != default ? updateBook.GenreId : book.GenreId;
+            book.PageCount = updateBook.PageCount != default ? updateBook.PageCount : book.PageCount;
+            book.PublishDate = updateBook.PublishDate != default ? updateBook.PublishDate : book.PublishDate;
+            book.Title = updateBook.Title != default ? updateBook.Title : book.Title;
+
+            return Ok();
+        }
     }
 }
