@@ -1,5 +1,7 @@
 ﻿using BookStore.BookOperations.CreateBook;
+using BookStore.BookOperations.GetBookDetail;
 using BookStore.BookOperations.GetBooks;
+using BookStore.BookOperations.UpdateBook;
 using BookStore.DBOperations;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -28,10 +30,20 @@ namespace BookStore.Controllers
         }
 
         [HttpGet("{id}")]
-        public Book GetById(int id)
+        public IActionResult GetById(int id)
         {
-            var book = _context.Books.Where(book => book.Id == id).SingleOrDefault();
-            return book;
+            BookDetailViewModel result;
+            try
+            {
+                GetBookDetailQuery query = new GetBookDetailQuery(_context);
+                query.BookId = id;
+                result = query.Handle();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            return Ok(result);
         }
 
         /*
@@ -56,7 +68,6 @@ namespace BookStore.Controllers
             }
             catch (Exception ex)
             {
-
                 return BadRequest(ex.Message);
             }
             return Ok();
@@ -64,18 +75,20 @@ namespace BookStore.Controllers
 
         //put
         [HttpPut("{id}")]
-        public IActionResult UpdateBook(int id, [FromBody] Book updateBook)
+        public IActionResult UpdateBook(int id, [FromBody] UpdateBookModel updateBook)
         {
-            var book = _context.Books.SingleOrDefault(x => x.Id == id);
-            if (book is null)
-                return BadRequest();
+            try
+            {
+                UpdateBookCommand command = new UpdateBookCommand(_context);
+                command.BookId = id;
+                command.Model = updateBook;
+                command.Handle();
+            }
+            catch (Exception ex)
+            {
 
-            book.GenreId = updateBook.GenreId != default ? updateBook.GenreId : book.GenreId;
-            book.PageCount = updateBook.PageCount != default ? updateBook.PageCount : book.PageCount;
-            book.PublishDate = updateBook.PublishDate != default ? updateBook.PublishDate : book.PublishDate;
-            book.Title = updateBook.Title != default ? updateBook.Title : book.Title;
-
-            _context.SaveChanges();
+                return BadRequest(ex.Message);
+            }
             return Ok();
         }
 

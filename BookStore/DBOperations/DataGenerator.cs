@@ -20,7 +20,7 @@ namespace BookStore.DBOperations
                     {
                         //Id = 1,
                         Title = "Lean Startup",
-                        GenreId = 1, // Personal Growth
+                        GenreId = 0, // Personal Growth
                         PageCount = 200,
                         PublishDate = new System.DateTime(2001, 06, 12)
                     },
@@ -28,7 +28,7 @@ namespace BookStore.DBOperations
                     {
                         //Id = 2,
                         Title = "Herland",
-                        GenreId = 2, // Science Fiction
+                        GenreId = 1, // Science Fiction
                         PageCount = 250,
                         PublishDate = new System.DateTime(2010, 05, 23)
                     },
@@ -36,7 +36,7 @@ namespace BookStore.DBOperations
                     {
                         //Id = 3,
                         Title = "Dune",
-                        GenreId = 2, // Science Fiction
+                        GenreId = 1, // Science Fiction
                         PageCount = 540,
                         PublishDate = new System.DateTime(2001, 12, 21)
                     }
