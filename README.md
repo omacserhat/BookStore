@@ -7,3 +7,11 @@
 + Kitap ekleme servisi
 + Kitap silme servisi
 + Kitap güncelleme servisi
+
+
+## Kullanılan Özellikler
+
++ EntityFramework
++ Model
++ AutoMapper
++ FluentValidation
