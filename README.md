@@ -1,4 +1,4 @@
-# BookStore Patika Eğitimi Projesi
+# BookStore Patika Eğitimi Projesi (.Net Core)
 
 ## Servisler
 
@@ -11,6 +11,7 @@
 
 ## Kullanılan Teknolojiler/Özellikler
 
++ .NetCore 5.0
 + EntityFramework
 + Model
 + AutoMapper
