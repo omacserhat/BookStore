@@ -17,3 +17,4 @@
 + FluentValidation
 + Middleware
 + TDD(Test Driven Development)
++ Kimlik Doğrulama ve Yetkilendirme
