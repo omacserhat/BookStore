@@ -9,9 +9,11 @@
 + Kitap güncelleme servisi
 
 
-## Kullanılan Özellikler
+## Kullanılan Teknolojiler/Özellikler
 
 + EntityFramework
 + Model
 + AutoMapper
 + FluentValidation
++ Middleware
++ TDD(Test Driven Development)
