@@ -1,4 +1,4 @@
-# BookStore Patika Eğitimi Projesi
+# BookStore Patika Eğitimi Projesi (.Net Core)
 
 ## Servisler
 
@@ -9,9 +9,13 @@
 + Kitap güncelleme servisi
 
 
-## Kullanılan Özellikler
+## Kullanılan Teknolojiler/Özellikler
 
++ .NetCore 5.0
 + EntityFramework
 + Model
 + AutoMapper
 + FluentValidation
++ Middleware
++ TDD(Test Driven Development)
++ Kimlik Doğrulama ve Yetkilendirme
