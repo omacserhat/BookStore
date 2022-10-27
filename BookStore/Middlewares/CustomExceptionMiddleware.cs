@@ -5,15 +5,18 @@ using System.Diagnostics;
 using System.Net;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using BookStore.Services;
 
 namespace BookStore.Middlewares
 {
     public class CustomExceptionMiddleware
     {
         private readonly RequestDelegate _next;
-        public CustomExceptionMiddleware(RequestDelegate next)
+        ILoggerService _loggerService;
+        public CustomExceptionMiddleware(RequestDelegate next, ILoggerService loggerService)
         {
             _next = next;
+            _loggerService = loggerService;
         }
         public async Task Invoke(HttpContext context)
         {
@@ -22,12 +25,11 @@ namespace BookStore.Middlewares
             {
                 // Requestte hangi http methoduna istek yapıldığını console'a yazdıran kod.
                 string message = "[Request] HTTP " + context.Request.Method + " - " + context.Request.Path;
-                Console.WriteLine(message);
+                _loggerService.Write(message);
                 await _next(context);
                 // Request'in başlangıcından sonuna kadar süresini hesaplayan ve kaç ms'te response dönülmüş yazdıran kod.
-
                 message = "[Request] HTTP " + context.Request.Method + " - " + context.Request.Path + " responded " + context.Response.StatusCode + " in " + watch.Elapsed.TotalMilliseconds + "ms";
-                Console.WriteLine(message);
+                _loggerService.Write(message);
             }
             catch (Exception ex)
             {
@@ -42,7 +44,7 @@ namespace BookStore.Middlewares
             context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
 
             string message = "[Error] HTTP " + context.Request.Method + " - " + context.Response.StatusCode + " Error Message " + ex.Message + " in " + watch.Elapsed.TotalMilliseconds + "ms";
-            Console.WriteLine(message);
+            _loggerService.Write(message);
 
             var result = JsonConvert.SerializeObject(new { error = ex.Message }, Formatting.None);
 
