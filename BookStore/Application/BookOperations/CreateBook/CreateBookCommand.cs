@@ -41,7 +41,7 @@ namespace BookStore.BookOperations.CreateBook
           //  book.PageCount = Model.PageCount;
           //  book.GenreId = Model.GenreId;
 
-            _dbContext.Add(book);
+            _dbContext.Books.Add(book);
             _dbContext.SaveChanges();
         }
 
