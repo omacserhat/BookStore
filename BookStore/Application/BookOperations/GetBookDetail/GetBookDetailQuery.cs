@@ -10,12 +10,12 @@ namespace BookStore.BookOperations.GetBookDetail
 {
     public class GetBookDetailQuery
     {
-        private readonly BookStoreDbContext _dbContext;
+        private readonly IBookStoreDbContext _dbContext;
         private readonly IMapper _mapper;
 
         public int BookId { get; set; }
 
-        public GetBookDetailQuery(BookStoreDbContext dbContext, IMapper mapper)
+        public GetBookDetailQuery(IBookStoreDbContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
             _mapper = mapper;
