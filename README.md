@@ -1,15 +1,30 @@
 # BookStore Patika Eğitimi Projesi (.Net Core)
 
-## Servisler
+## Commands and Queries
 
-+ Bütün kitapları listeleme servisi
-+ Kitapları ID'ye göre listeleme servisi
-+ Kitap ekleme servisi
-+ Kitap silme servisi
-+ Kitap güncelleme servisi
+1) Book
++ CreateBook
++ UpdateBook
++ DeleteBook
++ GetBookDetail(GetById)
++ GetBooks(GetAll)
+
+2) Author
++ CreateAuthor
++ UpdateAuthor
++ DeleteAuthor
++ GetAuthorDetail(GetById)
++ GetAuthors(GetAll)
+
+3) Genre
++ CreateGenre
++ UpdateGenre
++ DeleteGenre
++ GetGenreDetail(GetById)
++ GetGenres(GetAll)
 
 
-## Kullanılan Teknolojiler/Özellikler
+## Used Technologies
 
 + .NetCore 5.0
 + EntityFramework
