@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using BookStore.Common;
 using BookStore.DBOperations;
+using BookStore.Entities;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
