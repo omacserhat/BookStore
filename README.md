@@ -2,21 +2,21 @@
 
 ## Commands and Queries
 
-1) Book
+### 1) Book
 + CreateBook
 + UpdateBook
 + DeleteBook
 + GetBookDetail(GetById)
 + GetBooks(GetAll)
 
-2) Author
+### 2) Author
 + CreateAuthor
 + UpdateAuthor
 + DeleteAuthor
 + GetAuthorDetail(GetById)
 + GetAuthors(GetAll)
 
-3) Genre
+### 3) Genre
 + CreateGenre
 + UpdateGenre
 + DeleteGenre
