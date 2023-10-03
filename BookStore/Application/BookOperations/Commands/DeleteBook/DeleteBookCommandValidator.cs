@@ -1,8 +1,8 @@
 ﻿using FluentValidation;
 
-namespace BookStore.BookOperations.DeleteBook
+namespace BookStore.Application.BookOperations.Commands.DeleteBook
 {
-    public class DeleteBookCommandValidator :AbstractValidator<DeleteBookCommand>
+    public class DeleteBookCommandValidator : AbstractValidator<DeleteBookCommand>
     {
         public DeleteBookCommandValidator()
         {

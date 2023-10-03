@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 
-namespace BookStore.BookOperations.CreateBook
+namespace BookStore.Application.BookOperations.Commands.CreateBook
 {
 
     public class CreateBookCommand
@@ -33,25 +33,23 @@ namespace BookStore.BookOperations.CreateBook
 
             book = _mapper.Map<Book>(Model);
 
-          // Artık AutoMapper Kullanıyoruz.
+            // Artık AutoMapper Kullanıyoruz.
 
-          //  book = new Book();
-          //  book.Title = Model.Title;
-          //  book.PublishDate = Model.PublishDate;
-          //  book.PageCount = Model.PageCount;
-          //  book.GenreId = Model.GenreId;
+            //  book = new Book();
+            //  book.Title = Model.Title;
+            //  book.PublishDate = Model.PublishDate;
+            //  book.PageCount = Model.PageCount;
+            //  book.GenreId = Model.GenreId;
 
             _dbContext.Books.Add(book);
             _dbContext.SaveChanges();
         }
-
-        public class CreateBookModel
-        {
-            public string Title { get; set; }
-            public int GenreId { get; set; }
-            public int PageCount { get; set; }
-            public DateTime PublishDate { get; set; }
-        }
-
+    }
+    public class CreateBookModel
+    {
+        public string Title { get; set; }
+        public int GenreId { get; set; }
+        public int PageCount { get; set; }
+        public DateTime PublishDate { get; set; }
     }
 }

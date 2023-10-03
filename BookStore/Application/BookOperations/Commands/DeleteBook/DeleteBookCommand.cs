@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace BookStore.BookOperations.DeleteBook
+namespace BookStore.Application.BookOperations.Commands.DeleteBook
 {
     public class DeleteBookCommand
     {
@@ -27,5 +27,5 @@ namespace BookStore.BookOperations.DeleteBook
             _dbContext.SaveChanges();
         }
     }
- 
+
 }

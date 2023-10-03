@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace BookStore.BookOperations.GetBookDetail
+namespace BookStore.Application.BookOperations.Queries.GetBookDetail
 {
     public class GetBookDetailQuery
     {
@@ -26,7 +26,7 @@ namespace BookStore.BookOperations.GetBookDetail
             var book = _dbContext.Books.Where(book => book.Id == BookId).SingleOrDefault();
             if (book is null)
                 throw new InvalidOperationException("Kitap bulunamadı.");
-            
+
             BookDetailViewModel vm = _mapper.Map<BookDetailViewModel>(book);
             // vm.Title = book.Title;
             // vm.Genre = ((GenreEnum)book.GenreId).ToString();

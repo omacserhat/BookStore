@@ -2,13 +2,14 @@
 using BookStore.Application.AuthorOperations.Commands.CreateAuthor;
 using BookStore.Application.AuthorOperations.Queries.GetAuthor;
 using BookStore.Application.AuthorOperations.Queries.GetAuthorDetail;
+using BookStore.Application.BookOperations.Commands.CreateBook;
+using BookStore.Application.BookOperations.Queries.GetBookDetail;
+using BookStore.Application.BookOperations.Queries.GetBooks;
 using BookStore.Application.GenreOperations.Commands.CreateGenre;
 using BookStore.Application.GenreOperations.Queries.GetGenreDetail;
 using BookStore.Application.GenreOperations.Queries.GetGenres;
-using BookStore.BookOperations.GetBookDetail;
-using BookStore.BookOperations.GetBooks;
 using BookStore.Entities;
-using static BookStore.BookOperations.CreateBook.CreateBookCommand;
+using static BookStore.Application.BookOperations.Commands.CreateBook.CreateBookCommand;
 
 namespace BookStore.Common
 {
