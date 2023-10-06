@@ -6,15 +6,12 @@ using BookStore.Application.BookOperations.Queries.GetBookDetail;
 using BookStore.Application.BookOperations.Queries.GetBooks;
 using BookStore.DBOperations;
 using FluentValidation;
-using FluentValidation.Results;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using static BookStore.Application.BookOperations.Commands.CreateBook.CreateBookCommand;
 
 namespace BookStore.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("[controller]s")]
     public class BookController : ControllerBase
