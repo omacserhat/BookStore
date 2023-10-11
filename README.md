@@ -23,6 +23,10 @@
 + GetGenreDetail(GetById)
 + GetGenres(GetAll)
 
++ ### 4) User
++ CreateUser
++ CreateToken
++ RefreshToken
 
 ## Used Technologies
 
@@ -33,4 +37,4 @@
 + FluentValidation
 + Middleware
 + TDD(Test Driven Development)
-+ Kimlik Doğrulama ve Yetkilendirme
++ Kimlik Doğrulama ve Yetkilendirme(Token)
