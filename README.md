@@ -23,7 +23,7 @@
 + GetGenreDetail(GetById)
 + GetGenres(GetAll)
 
-+ ### 4) User
+### 4) User
 + CreateUser
 + CreateToken
 + RefreshToken
